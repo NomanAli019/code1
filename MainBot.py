@@ -62,15 +62,11 @@ async def walletdeletiondone(query:CallbackQuery):
 
 # for creating the wallet 
 @router.callback_query(cb.filter(F.strt == "createwallet"))
-async def deletingtext(query:CallbackQuery):
+async def createwallet(query:CallbackQuery):
     await query.bot.delete_message(chat_id=query.message.chat.id , message_id=query.message.message_id)
     await query.message.answer(f"your wallet has been created! ")
 
-# for claiming 
-@router.callback_query(cb.filter(F.strt == "Claim"))
-async def claiming(query:CallbackQuery)->None:
-    await query.bot.delete_message(chat_id=query.message.chat.id , message_id=query.message.message_id)
-    await query.message.answer(f"yet not decided anything for this section  !")
+
 
 
 async def main() -> None:
